@@ -1,11 +1,12 @@
 #
 
-import os
-import random
+import re
 import subprocess
 
 def status():
     result = subprocess.run(['arkmanager', 'status', '@all'], stdout=subprocess.PIPE, universal_newlines=True)
+    ansi_escape = re.compile(r'\x1B\[[0-?]*[ -/]*[@-~]')
+    ansi_escape.sub('', result)
     return result
 
 
