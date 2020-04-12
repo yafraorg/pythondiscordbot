@@ -1,8 +1,10 @@
 # Discord Bot written in Python
 A discord bot written in python used within a linux environment (game server control, server control)
 
+Based on the excellent guide at https://realpython.com/how-to-make-a-discord-bot-python/
+
 ## Environment
-* Python 3.7+
+* Python 3.6+
 * .env file with DISCORD_TOKEN="xyxyxy"
 
 ```bash

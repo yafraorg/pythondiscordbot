@@ -3,8 +3,8 @@
 import re
 import subprocess
 
-def status():
-    result = subprocess.run(['arkmanager', 'status', '@all'], stdout=subprocess.PIPE, universal_newlines=True)
+def arkmanager(command: str) -> str:
+    result = subprocess.run(['arkmanager', command, '@all'], stdout=subprocess.PIPE, universal_newlines=True)
     if result.returncode != 0:
         return f"error from system command - error code {result.returncode}"
     ansi_escape = re.compile(r'\x1B\[[0-?]*[ -/]*[@-~]')
@@ -12,8 +12,8 @@ def status():
     return converted_result
 
 
-def dig():
-    result = subprocess.run(['gamedig', '--type', 'arkse', '--host', 'localhost', '--port', '27015'], stdout=subprocess.PIPE, universal_newlines=True)
+def dig(port: str) -> str:
+    result = subprocess.run(['gamedig', '--type', 'arkse', '--host', 'localhost', '--port', port], stdout=subprocess.PIPE, universal_newlines=True)
     if result.returncode != 0:
         return f"error from system command - error code {result.returncode}"
     return result.stdout
