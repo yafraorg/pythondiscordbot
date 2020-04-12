@@ -35,22 +35,14 @@ async def on_member_join(member):
 
 
 @bot.command(name='arkmanager', help='ARK Server status from arkmanager')
-async def arkstatus(ctx, command: str):
-    if not command:
-        myCmd = "status"
-    else:
-        myCmd = command
-    result = arkCommands.arkmanager(myCmd)
+async def arkstatus(ctx, command: str = "status"):
+    result = arkCommands.arkmanager(command)
     await ctx.send(result)
 
 
 @bot.command(name='dig', help='ARK Server status from gamedig')
-async def arkstatus(ctx, port: str):
-    if not port:
-        myPort = "27015"
-    else:
-        myPort = port
-    result = arkCommands.dig(myPort)
+async def arkstatus(ctx, port: str = "27015"):
+    result = arkCommands.dig(port)
     await ctx.send(result)
 
 
