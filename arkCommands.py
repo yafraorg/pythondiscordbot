@@ -6,7 +6,7 @@ import subprocess
 def status():
     result = subprocess.run(['arkmanager', 'status', '@all'], stdout=subprocess.PIPE, universal_newlines=True)
     ansi_escape = re.compile(r'\x1B\[[0-?]*[ -/]*[@-~]')
-    converted_result = ansi_escape.sub('', result)
+    converted_result = ansi_escape.sub('', str(result))
     return converted_result
 
 
