@@ -2,7 +2,7 @@ import asyncio
 import arkCommands
 
 async def demo():
-    ret = await arkCommands.arkmanager(["echo", "status", "@main"])
+    ret = await arkCommands.arkmanager(["echo", "1"])
     return ret
 
 async def main():
