@@ -9,7 +9,9 @@ Based on the excellent guide at https://realpython.com/how-to-make-a-discord-bot
 * Ubuntu 18.04+ as OS (or any Linux distro)
 
 ```bash
-DISCORD_TOKEN="xyxyxy
+DISCORD_TOKEN="xyxyxy"
+DISCORD_GUILD="ababab"
+DISCORD_PREFIX="!"
 ```
 
 ## Configuration and setup
