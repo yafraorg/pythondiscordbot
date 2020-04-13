@@ -34,13 +34,13 @@ async def on_member_join(member):
     )
 
 
-@bot.command(name='arkmanager', help='ARK Server status from arkmanager')
-async def arkstatus(ctx, command: str = "status"):
-    result = arkCommands.arkmanager(command)
+@bot.command(name='arkmanager', help='ARK Server status from arkmanager, you can add arguments')
+async def arkstatus(ctx, command: str = "list-instances", command2: str = "", command3: str = ""):
+    result = arkCommands.arkmanager(command, command2, command3)
     await ctx.send(result)
 
 
-@bot.command(name='dig', help='ARK Server status from gamedig')
+@bot.command(name='dig', help='ARK Server status from gamedig, you can add the argument PORT (27015) of the ARK server')
 async def arkstatus(ctx, port: str = "27015"):
     result = arkCommands.dig(port)
     await ctx.send(result)

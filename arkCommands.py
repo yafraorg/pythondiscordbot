@@ -3,8 +3,8 @@
 import re
 import subprocess
 
-def arkmanager(command: str) -> str:
-    result = subprocess.run(['arkmanager', command, '@all'], stdout=subprocess.PIPE, universal_newlines=True)
+def arkmanager(command: str, command2: str, command3: str) -> str:
+    result = subprocess.run(['arkmanager', command, command2, command3], stdout=subprocess.PIPE, universal_newlines=True)
     if result.returncode != 0:
         return f"error from system command - error code {result.returncode}"
     ansi_escape = re.compile(r'\x1B\[[0-?]*[ -/]*[@-~]')

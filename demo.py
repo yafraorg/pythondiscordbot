@@ -1,6 +1,6 @@
 import arkCommands
 
-ret = arkCommands.arkmanager("status")
+ret = arkCommands.arkmanager("status @all")
 print(ret)
 
 #ret = arkCommands.dig("27015")

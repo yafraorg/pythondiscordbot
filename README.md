@@ -23,4 +23,11 @@ pip3 install -r requirements.txt
 Use different prefixes if you run multiple bots in one guild/server. Register the bot's separately and use their tokens. 
 
 In order to start the bot while the system starts, copy as sudo the systemd file discordbot.service into
-/etc/systemd/system and reboot (or systemctl start discordbot). Adjust the ExecStart and User.
+/etc/systemd/system. Adjust the ExecStart and User.
+Afterwards run:
+
+```bash
+sudo systemctl enable discordbot
+sudo systemctl start discordbot
+```
+or reboot instead of sytemctl start.
