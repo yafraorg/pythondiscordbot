@@ -1,11 +1,13 @@
 [Unit]
-Description=Discord BOT service
+Description=Discord BOT service by yafra.org
 After=network.target
 StartLimitIntervalSec=0
+
 [Service]
 Type=simple
 Restart=always
 RestartSec=1
+Environment=PYTHONUNBUFFERED=1
 User=arkserver
 ExecStart=/usr/bin/env python3 /home/arkserver/pythondiscordbot/myDiscord.py
 
