@@ -1,7 +1,14 @@
+import asyncio
 import arkCommands
 
-ret = arkCommands.arkmanager(["arkmanager", "status", "@main"])
-print(ret)
+async def demo():
+    ret = await arkCommands.arkmanager(["echo", "status", "@main"])
+    return ret
 
-#ret = arkCommands.dig("27015")
-#print(ret)
+async def main():
+    print(f"started demo function")
+    ret = await demo()
+    print(ret)
+    print(f"finished demo function")
+
+asyncio.run(main())

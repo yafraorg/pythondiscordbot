@@ -4,7 +4,7 @@ import re
 import subprocess
 
 
-def arkmanager(command: []) -> str:
+async def arkmanager(command: []) -> str:
     result = subprocess.run(command, stdout=subprocess.PIPE,
                             universal_newlines=True)
     if result.returncode != 0:
@@ -14,7 +14,7 @@ def arkmanager(command: []) -> str:
     return converted_result
 
 
-def dig(port: str) -> str:
+async def dig(port: str) -> str:
     result = subprocess.run(['gamedig', '--type', 'arkse', '--host', 'localhost', '--port', port],
                             stdout=subprocess.PIPE, universal_newlines=True)
     if result.returncode != 0:

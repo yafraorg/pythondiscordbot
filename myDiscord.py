@@ -1,7 +1,5 @@
 # bot.py
 import os
-import random
-import subprocess
 import discord
 from discord.ext import commands
 from dotenv import load_dotenv
@@ -38,13 +36,13 @@ async def arkstatus(ctx, command: str = "list-instances", command2: str = "", co
         command_list.append(command2)
     if command3 != "":
         command_list.append(command3)
-    result = arkCommands.arkmanager(command_list)
+    result = await arkCommands.arkmanager(command_list)
     await ctx.send(result)
 
 
 @bot.command(name='dig', help='ARK Server status from gamedig, you can add the argument PORT (27015) of the ARK server')
 async def arkstatus(ctx, port: str = "27015"):
-    result = arkCommands.dig(port)
+    result = await arkCommands.dig(port)
     await ctx.send(result)
 
 
