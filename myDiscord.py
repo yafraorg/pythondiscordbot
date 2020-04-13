@@ -48,7 +48,7 @@ async def on_member_join(member):
 
 @bot.command(name='arkmanager', help='ARK Server status from arkmanager, you can add arguments')
 async def arkstatus(ctx, command: str = "list-instances", command2: str = "", command3: str = ""):
-    command_list = ["arkmanager", command]
+    command_list = [command]
     if command2 != "":
         command_list.append(command2)
     if command3 != "":

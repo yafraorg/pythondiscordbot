@@ -20,6 +20,7 @@ import subprocess
 
 
 async def arkmanager(command: []) -> str:
+    command.insert(0, "/home/arkserver/bin/arkmanager")
     result = subprocess.run(command, stdout=subprocess.PIPE,
                             universal_newlines=True, shell=False)
     if result.returncode != 0:
@@ -30,7 +31,7 @@ async def arkmanager(command: []) -> str:
 
 
 async def dig(port: str) -> str:
-    result = subprocess.run(['gamedig', '--type', 'arkse', '--host', 'localhost', '--port', port],
+    result = subprocess.run(['/usr/bin/gamedig', '--type', 'arkse', '--host', 'localhost', '--port', port],
                             stdout=subprocess.PIPE, universal_newlines=True)
     if result.returncode != 0:
         return f"error from system command - error code {result.returncode}"
