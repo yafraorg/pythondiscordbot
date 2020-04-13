@@ -30,6 +30,17 @@ async def on_member_join(member):
     )
 
 
+@bot.command(name='arkmanager2', help='ARK Server status from arkmanager, you can add arguments')
+async def arkstatus(ctx, command: str = "list-instances", command2: str = "", command3: str = ""):
+    command_list = ["arkmanager", command]
+    if command2 != "":
+        command_list.append(command2)
+    if command3 != "":
+        command_list.append(command3)
+    result = await arkCommands.arkmanager(command_list)
+    await ctx.send(result)
+
+
 @bot.command(name='arkmanager', help='ARK Server status from arkmanager, you can add arguments')
 async def arkstatus(ctx, command: str = "list-instances", command2: str = "", command3: str = ""):
     command_list = ["arkmanager", command]
